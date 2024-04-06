@@ -288,3 +288,10 @@ button {
     font-family: "Baloo 2", cursive;
     padding: 0px;
 }
+
+#learnButton {
+    border: none;
+    color: white;
+    background-color: #090c9b;
+    border-radius: 25px;
+}
