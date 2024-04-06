@@ -1,43 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Classifier</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #result {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-
-<h2>Image Classifier</h2>
-<button onclick="getClass()">Classify Image</button>
+<h2>Image Classifier with Live Webcam Feed</h2>
+<video id="webcam" autoplay playsinline width="224" height="224"></video>
+<button onclick="captureImage()">Capture and Classify</button>
+<canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
 
 <div id="result"></div>
 
 <script>
-function getClass() {
-    fetch('/predict')
-        .then(response => response.json())
-        .then(data => {
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `<p>Class: <strong>${data.class}</strong></p>
-                                   <p>Confidence: <strong>${data.confidence.toFixed(2)}</strong></p>`;
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `<p>Error fetching prediction.</p>`;
-        });
-}
-</script>
+    const video = document.getElementById('webcam');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
 
-</body>
-</html>
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => video.srcObject = stream)
+        .catch(console.error);
+
+    function captureImage() {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(sendImageForPrediction);
+    }
+
+    function sendImageForPrediction(blob) {
+        let formData = new FormData();
+        formData.append('image', blob);
+
+        fetch('/predict', {method: 'POST', body: formData})
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `<p>Class: <strong>${data.class}</strong></p>
+                                       <p>Confidence: <strong>${data.confidence.toFixed(2)}</strong></p>`;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `<p>Error fetching prediction.</p>`;
+            });
+    }
+</script>
