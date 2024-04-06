@@ -6,9 +6,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="hero-title">
@@ -47,50 +44,93 @@
             <div class="content-left">
                 <h1>Start Learning</h1>
                 <br><br>
-                <p id="no-anim">Ready to unlock a whole new world of communication and connection? Learning American Sign Language (ASL) not only bridges gaps between the hearing and Deaf communities but also enriches your understanding of language and culture. 
-                    Embrace the beauty of signing and embark on a journey of inclusivity, empathy, and empowerment. 
-                    Start learning ASL today and open doors to a world of endless possibilities and connections!</p>
+                <p>Knowing the basic alphabet is a good starting point.</p>
                 <br><br><br><br><br>
-                <a href="learn.html">Get Started!</a>
+                <!--<a href="learn.html">Get Started!</a>-->
+                <button id="learnButton">Get Started!</button>
             </div>
             <div class="content-right">
             </div>
         </div>
 
-            <div id="content3" class="content">
-                <h1>About Us</h1>
-                <div class="aboutUs">
-                    <div class="aboutUsRow">
-                        <div id="TJ" class="eachAbout">
-                            <h3 style="text-align: center;">TJ Klint</h3>
-                            <img src="devImages/TJ Picture.jpg" alt="Picture of TJ" class="aboutImages">
-                            <p class="userBlurb">Hi! I'm a 2nd Year Computer Science student at John Abbott College, I'm passionate about software development and user privacy.</p>
-                        </div>
-                    
-                        <div id="Griffin" class="eachAbout">
-                            <h3 style="text-align: center;">Griffin Bonomo-Clough</h3>
-                            <img src="devImages/Griffin Picture.jpg" alt="Picture of Griffin" class="aboutImages">
-                            <p class="userBlurb">Hi! I'm a 3rd Year Computer Science student at John Abbott College, I'm passionate about graphics programming.</p>
-                        </div>
-                    
+        <div id="content3" class="content">
+            <h1>About Us</h1>
+            <div class="aboutUs">
+                <div class="container mx-auto">
+                    <div id="TJ" class="row justify-content-center">
+                        <h3 style="text-align: center;">TJ Klint</h3>
+                        <img src="Images/TJ Picture.jpg" alt="Picture of TJ" style="border: 4px solid black;">
+                        <p style="text-align: center;">Hi! I'm a 2nd Year Computer Science student at John Abbott College, I'm passionate about software development and user privacy.</p>
                     </div>
-                    <div class="aboutUsRow">
-                        <div id="Dylan" class="eachAbout">
-                            <h3 style="text-align: center;">Dylan Savelson</h3>
-                            <img src="devImages\Dylan Picture.jpg" alt="Picture of Dylan" class="aboutImages">
-                            <p class="userBlurb">Hey, I'm a second year comp sci student at JAC, and I started coding in sec 5 for a complementary class. I ended up really enjoying so I went into comp sci.</p>
+        
+                    <div class="vl"></div>
+        
+                    <div id="Griffin" class="imageAndBlurb" style="margin-top:1%">
+                        <h3 style="text-align: center; padding-top:0;">Griffin Bonomo-Clough</h3>
+                        <img src="Images/Griffin Picture.jpg" alt="Picture of Griffin" style="border: 4px solid black;">
+                        <p style="text-align: center;">Hi! I'm a 3rd Year Computer Science student at John Abbott College, I'm passionate about software development and backend development.</p>
+                    </div>
+        
+                    <div class="vl"></div>
+        
+                    <div id="Dylan" class="">
+                        <h3 style="text-align: center;">Dylan Savelson</h3>
+                        <img src="Images\Dylan Picture.jpg" alt="Picture of Dylan">
+                        <p style="text-align: center;">Hey, I'm a second year comp sci student at JAC, and I started coding in sec 5 for a complementary class. I ended up really enjoying so I went into comp sci.</p>
+                    </div>
+                </div>
+        
+                <div class="moreInfo">
+        
+                    <div id="TJMore">
+                        <div id="socials">
+                            <p>TJ Klint</p>
+                            <ul>
+                                <li><a href="https://ca.linkedin.com/in/timothy-klint">TJ's Linkedin</a></li>
+                                <li><a href="CVs\TimothyKlintResumeEnglish.pdf">TJ's CV</a></li>
+                                <li><a href="https://github.com/tjklint">TJ's Github</a></li>
+                            </ul>
                         </div>
-                        <div id="Taryn" class="eachAbout">
-                            <h3 style="text-align: center;">Taryn Beaupré</h3>
-                            <img src="devImages\Taryn Picture.jpg" alt="Picture of Taryn" class="aboutImages">
-                            <p class="userBlurb">Hi there! I am also a 2nd Year Comp Sci student at JAC. I have an interest in software development, machine learning, and cybersecurity. :)
-                            </p>
+                        <div id="aboutMe">
+                            <p>In my time up to my 2nd year at John Abbott College, the Computer Science program has given me the foundation to learn outside of my course's curriculum. The languages I'm most comfortable in are C#, C++ and JS. Though I'm able to pick up so much more on the fly. I've always loved fast-paced environments and being able to hone abilities/skills at a moment's notice.</p>
+                        </div>
+                    </div>
+                    
+                    <hr style="width:75%;text-align:center;border: 2px solid black;">
+        
+                    <div id="GriffinMore">
+                        <div id="socials">
+                            <p>Griffin Bonomo-Clough</p>
+                            <ul>
+                                <li><a href="CVs/Bonomo-CloughGriffin.pdf">Griffin's CV</a></li>
+                                <li><a href="https://github.com/GriffinBonomo">Griffin's Github</a></li>
+                            </ul>
+                        </div>
+                        <div id="aboutMe">
+                            <p>During my time at John Abbott College, studying Computer Science has allowed me to create create personal projects that allow me to grow as a programmer and challenge my creative skills. I'm most comfortable with Javascript, C#, Java and Kotlin and love learning new languages and frameworks.</p>
+                        </div>
+                    </div>
+                    
+                    <hr style="width:75%;text-align:center; border: 2px solid black;">
+        
+                    <div id="DylanMore">
+                        <div id="socials">
+                            <p>Dylan Savelson</p>
+                            <ul>
+                                <li><a href="https://www.linkedin.com/in/dylan-savelson-83714628b/">Dylan's Linkedin</a></li>
+                                <li><a href="CVs\Dylan Savelson CV - October 2023.pdf">Dylan's CV</a></li>
+                                <li><a href="https://github.com/DylanSavelson">Dylan's Github</a></li>
+                            </ul>
+                        </div>
+                        <div id="aboutMe">
+                            <p>Since I started coding I have learned so much, from school, and work. I work as a wev dev intern at Doverco. I mostly handle minor site changes, page creation, and css/html. I never thought I'd find something I could make money off of that I really enjoy. I really enjoy creating websites with html and css.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
         </div>
-        <script src="./script.js"></script>
+        <script defer src="./script.js"></script>
     </body>
 </html>
