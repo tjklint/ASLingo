@@ -6,6 +6,8 @@ var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
 
+const learnButton = document.getElementById("learnButton");
+learnButton.addEventListener("click", openLearnTab);
 
 function openHOME() {
     content1.style.transform = "translateX(0)";
@@ -31,4 +33,9 @@ function openABOUT() {
     btn1.style.color = "#000";
     btn2.style.color = "#000";
     btn3.style.color = "#b4c5e4";
+}
+
+function openLearnTab(){
+    const url = "http://127.0.0.1:5000";
+    window.open(url);
 }
