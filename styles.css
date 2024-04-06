@@ -278,3 +278,9 @@ button {
     text-align: center;
     width: 30vh;
   }
+
+  #no-anim {
+    font-size: 20px;
+    font-family: "Baloo 2", cursive;
+    padding: 0px;
+}
