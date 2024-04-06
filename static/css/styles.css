@@ -1,0 +1,297 @@
+* {
+    padding: 0;
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fbfff1;
+}
+
+#learn-div {
+    width: 80%;
+    height: 800px;
+    position: relative;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+#learn-div div {
+    display: flex;
+    margin: 10px;
+}
+
+.arrow-button {
+    display: flex;
+    color: #C2FFE9;
+    border: none;
+    background-color: #090c9b;
+    padding: 10px 16px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    font-size: 14px;
+}
+
+.arrow-button > .arrow {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #C2FFE9;
+    border-bottom: 2px solid #C2FFE9;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 6px;
+    transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+    display: block;
+    background-color: currentColor;
+    width: 3px;
+    transform-origin: bottom right;
+    height: 2px;
+    position: absolute;
+    opacity: 0;
+    bottom: calc(-2px / 2);
+    transform: rotate(45deg);
+    transition: all .3s ease;
+    content: "";
+    right: 0;
+}
+
+.arrow-button:hover > .arrow {
+    transform: rotate(-45deg) translate(4px, 4px);
+    border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+    opacity: 1;
+    width: 8px;
+}
+
+.arrow-button:hover {
+    background-color: #017A4F;
+    color: #fff;
+}
+
+.hero-title {
+    width: 80%;
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+
+#logo-img {
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+    background: url(images/pexels-merve-ekmekci-2505042.jpg);
+    border-radius: 20px;
+}
+
+#logo {
+    font-family: 'Reddit Mono', sans-serif;
+    width: 80%;
+    position: relative;
+    margin: auto 10px;
+    font-size: 50px;
+}
+
+.hero {
+    width: 80%;
+    height: 800px;
+    position: relative;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.btn-box {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.btn-box button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding: 5%;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.content-left {
+    flex-basis: 50%;
+}
+
+.content-left p{
+    font-size: 13px;
+    padding: 30px 30px 30px 0px;
+}
+
+.content-left a, button{
+    width: 150px;
+    display: block;
+    padding: 8px 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+button {
+    color: blue;
+}
+
+.content-right {
+
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.content-right img {
+    width: 100%;
+    height: 350px;
+    border-radius: 25px;
+}
+
+#content1 {
+    transform: translateX(0px);
+}
+
+/* "Folder" colours */
+#btn1 { color: #090c9b; }
+#btn2 { color: #3066be; }
+#btn3 { color: #b4c5e4; }
+
+/* Button colours */
+#content1 a { background-color: #090c9b; }
+#content2 a { background-color: #3066be; }
+#content3 a { background-color: #b4c5e4; }
+
+#anim {
+    transform: translatey(0px);
+    animation: float 5s ease-in-out infinite;
+    width: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 15px;
+    color: black;
+    background-color: beige;
+    border-radius: 11px;
+    position: relative;
+    box-shadow: 20px 20px #090c9b;
+    font-family: "Baloo 2", cursive;
+    /* border: 1px solid $color-green; */
+}
+
+#anim:after {
+    transform: translatey(0px);
+    animation: float2 5s ease-in-out infinite;
+    content: ".";
+    font-weight: bold;
+    -webkit-text-fill-color: beige;
+    text-shadow: 22px 22px #090c9b;
+    text-align: left;
+    font-size: 55px;
+    width: 55px;
+    height: 11px;
+    line-height: 30px;
+    border-radius: 11px;
+    background-color: beige;
+    position: absolute;
+    display: block;
+    bottom: -30px;
+    left: 0;
+    box-shadow: 22px 22px #090c9b;
+    z-index: -2;
+}
+  
+@keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+}
+  
+@keyframes float2 {
+    0% {
+      line-height: 30px;
+      transform: translatey(0px);
+    }
+    55% {
+      transform: translatey(-20px);
+    }
+    60% {
+      line-height: 10px;
+    }
+    100% {
+      line-height: 30px;
+      transform: translatey(0px);
+    }
+}
+
+  .eachAbout {
+    display: flex; 
+    margin-top: 5vh;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5vh;
+  }
+
+  .aboutUsRow {
+    display: flex;
+
+  }
+
+  .aboutImages {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 25px;
+
+  }
+
+  #content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .userBlurb {
+    text-align: center;
+    width: 30vh;
+    font-size: 12px;
+  }
+
+  #no-anim {
+    font-size: 20px;
+    font-family: "Baloo 2", cursive;
+    padding: 0px;
+}
+
+#learnButton {
+    border: none;
+    color: white;
+    background-color: #090c9b;
+    border-radius: 25px;
+}
