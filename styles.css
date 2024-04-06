@@ -179,3 +179,31 @@
       transform: translatey(0px);
     }
   }
+
+  .eachAbout {
+    display: flex; 
+    margin-top: 5vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutUsRow {
+    display: flex;
+  }
+
+  .aboutImages {
+    border: 4px solid black; 
+    width: 30vh;
+    height: 30vh;
+  }
+
+  #content3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userBlurb {
+    text-align: center;
+    width: 30vh;
+  }
