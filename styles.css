@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fbfff1;
+}
+
+#logo {
+    font-family: 'Futura';
+    width: 80%;
+    position: relative;
+    margin: 20px auto;
+    font-size: 40px;
+}
+
+.hero {
+    width: 80%;
+    height: 450px;
+    position: relative;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.btn-box {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.btn-box button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding: 5%;
+    position: absolute;
+    transform: translateX(100%);
+    transition: 0.3s;
+}
+
+.content-left {
+    flex-basis: 50%;
+}
+
+.content-left p{
+    font-size: 13px;
+    padding: 30px 0;
+}
+
+.content-left a{
+    width: 150px;
+    display: block;
+    padding: 8px 5px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.content-right {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+#content1 {
+    transform: translateX(0px);
+}
+
+/* "Folder" colours */
+#btn1 { color: #090c9b; }
+#btn2 { color: #3066be; }
+#btn3 { color: #b4c5e4; }
+
+/* Button colours */
+#content1 a { background-color: #090c9b; }
+#content2 a { background-color: #3066be; }
+#content3 a { background-color: #b4c5e4; }
