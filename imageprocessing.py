@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('webcam.html')
+    return render_template('learn.html')
 
 model = load_model("./LLMModels/keras_model.h5", compile=False)
 class_names = open("./labels/labels.txt", "r").readlines()

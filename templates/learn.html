@@ -1,0 +1,79 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="question">A letter should show up here</div>
+        <div id="received-answer"></div>
+
+        <h2>Image Classifier with Live Webcam Feed</h2>
+        <video id="webcam" autoplay playsinline width="224" height="224"></video>
+        <button onclick="captureImage()">Capture and Classify</button>
+        <canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
+
+        <div id="result"></div>
+
+        <button id="next-question">Next Question</button>
+
+    </body>
+    <script>
+        const letters = "abcdefghijklmnopqrstuvwxyz";
+        let currentLetter = '';
+
+        const question = document.getElementById("question");
+        const answer = document.getElementById("received-answer");
+
+        const video = document.getElementById('webcam');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const nextButton = document.getElementById("next-question");
+        nextButton.addEventListener('click', generateQuestion);
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => video.srcObject = stream)
+            .catch(console.error);
+
+        function captureImage() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(sendImageForPrediction);
+        }
+
+        function sendImageForPrediction(blob) {
+            let formData = new FormData();
+            formData.append('image', blob);
+
+            fetch('/predict', {method: 'POST', body: formData})
+                .then(response => response.json())
+                .then(data => {
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = `<p>Class: <strong>${data.class}</strong></p>
+                                        <p>Confidence: <strong>${data.confidence.toFixed(2)}</strong></p>`;
+                    
+                    checkAnswer(data.class.split(' ')[1].toLowerCase());
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.innerHTML = `<p>Error fetching prediction.</p>`;
+                });
+        }
+
+        function generateQuestion(){
+            const questionText = "Please sign the letter: ";
+            const range = 3;
+            let index = Math.floor((Math.random() * range));
+
+            currentLetter = letters[index];
+            question.innerText = `${questionText} ${currentLetter}`;
+        }
+
+        function checkAnswer(letter){
+            if(letter == currentLetter){
+                answer.innerText = `Congratulations, you signed \"${currentLetter}\" correctly!`;
+            }
+            else{
+                answer.innerText = `Try again, you had to sign ${currentLetter}, but you signed ${letter}`;
+            }
+        }
+    </script>
+</html>
