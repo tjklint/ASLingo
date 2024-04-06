@@ -220,9 +220,9 @@ button {
     left: 0;
     box-shadow: 22px 22px #090c9b;
     z-index: -2;
-  }
+}
   
-  @keyframes float {
+@keyframes float {
     0% {
       transform: translatey(0px);
     }
@@ -232,9 +232,9 @@ button {
     100% {
       transform: translatey(0px);
     }
-  }
+}
   
-  @keyframes float2 {
+@keyframes float2 {
     0% {
       line-height: 30px;
       transform: translatey(0px);
@@ -249,7 +249,7 @@ button {
       line-height: 30px;
       transform: translatey(0px);
     }
-  }
+}
 
 #no-anim {
     font-size: 20px;
