@@ -1,22 +1,29 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="../styles.css">
     </head>
     <body>
-        <div id="question">A letter should show up here</div>
-        <div id="received-answer"></div>
+        <div class="hero-title">
+            <img id="logo-img" src="../images/vecteezy_octopus-cute_36660367.svg" href="homepage.html">
+            <h1 id="logo">ASLingo</h1>
+        </div>
+        <div id="learn-div">
+            <div id="question">A letter should show up here</div>
+            <div id="received-answer"></div>
 
-        <h2>Image Classifier with Live Webcam Feed</h2>
-        <video id="webcam" autoplay playsinline width="224" height="224"></video>
-        <button onclick="captureImage()">Capture and Classify</button>
-        <canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
+            <h2>Image Classifier with Live Webcam Feed</h2>
+            <video id="webcam" autoplay playsinline width="350" height="350"></video>
 
-        <div id="result"></div>
-
-        <button id="next-question">Next Question</button>
-
+            <div>
+                <button onclick="captureImage()">Capture and Classify</button>
+                <canvas id="canvas" width="350" height="350" style="display:none;"></canvas>
+                <div id="result"></div>
+                <button id="next-question" class="arrow-button">Next Question<span class="arrow"></span>
+                </button>
+            </div>
+        </div>
     </body>
-    <script>
+    <script defer>
         const letters = "abcdefghijklmnopqrstuvwxyz";
         let currentLetter = '';
 

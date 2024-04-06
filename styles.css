@@ -5,6 +5,74 @@
     background-color: #fbfff1;
 }
 
+#learn-div {
+    width: 80%;
+    height: 800px;
+    position: relative;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+#learn-div div {
+    display: flex;
+    margin: 10px;
+}
+
+.arrow-button {
+    display: flex;
+    color: #C2FFE9;
+    border: none;
+    background-color: #090c9b;
+    padding: 10px 16px;
+    border-radius: 20px;
+    transition: all .3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    font-size: 14px;
+}
+
+.arrow-button > .arrow {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #C2FFE9;
+    border-bottom: 2px solid #C2FFE9;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 6px;
+    transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+    display: block;
+    background-color: currentColor;
+    width: 3px;
+    transform-origin: bottom right;
+    height: 2px;
+    position: absolute;
+    opacity: 0;
+    bottom: calc(-2px / 2);
+    transform: rotate(45deg);
+    transition: all .3s ease;
+    content: "";
+    right: 0;
+}
+
+.arrow-button:hover > .arrow {
+    transform: rotate(-45deg) translate(4px, 4px);
+    border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+    opacity: 1;
+    width: 8px;
+}
+
+.arrow-button:hover {
+    background-color: #017A4F;
+    color: #fff;
+}
+
 .hero-title {
     width: 80%;
     margin: 30px auto;
@@ -71,10 +139,10 @@
 
 .content-left p{
     font-size: 13px;
-    padding: 30px 0;
+    padding: 30px 30px 30px 0px;
 }
 
-.content-left a{
+.content-left a, button{
     width: 150px;
     display: block;
     padding: 8px 5px;
@@ -82,6 +150,10 @@
     text-decoration: none;
     color: white;
     text-align: center;
+}
+
+button {
+    color: blue;
 }
 
 .content-right {
@@ -92,7 +164,7 @@
 
 .content-right img {
     width: 100%;
-    height: 100%;
+    height: 350px;
     border-radius: 25px;
 }
 
@@ -121,7 +193,6 @@
     font-size: 15px;
     color: black;
     background-color: beige;
-    padding: 50px;
     border-radius: 11px;
     position: relative;
     box-shadow: 20px 20px #090c9b;
@@ -149,9 +220,9 @@
     left: 0;
     box-shadow: 22px 22px #090c9b;
     z-index: -2;
-  }
+}
   
-  @keyframes float {
+@keyframes float {
     0% {
       transform: translatey(0px);
     }
@@ -161,9 +232,9 @@
     100% {
       transform: translatey(0px);
     }
-  }
+}
   
-  @keyframes float2 {
+@keyframes float2 {
     0% {
       line-height: 30px;
       transform: translatey(0px);
@@ -178,7 +249,7 @@
       line-height: 30px;
       transform: translatey(0px);
     }
-  }
+}
 
   .eachAbout {
     display: flex; 
