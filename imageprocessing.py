@@ -13,8 +13,8 @@ def home():
 
 # Your existing code refactored into a function
 def get_prediction():
-    model = load_model("./keras_model.h5", compile=False)
-    class_names = open("labels.txt", "r").readlines()
+    model = load_model("./LLMModels/keras_model.h5", compile=False)
+    class_names = open("./lables/labels.txt", "r").readlines()
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     
     image_path = "./userimages/userimage.jpg"
