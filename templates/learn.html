@@ -18,12 +18,12 @@
                 <button onclick="captureImage()">Capture and Classify</button>
                 <canvas id="canvas" width="350" height="350" style="display:none;"></canvas>
                 <div id="result"></div>
-                <button class="arrow-button">Next Question<span class="arrow"></span>
+                <button id="next-question" class="arrow-button">Next Question<span class="arrow"></span>
                 </button>
             </div>
         </div>
     </body>
-    <script>
+    <script defer>
         const letters = "abcdefghijklmnopqrstuvwxyz";
         let currentLetter = '';
 
